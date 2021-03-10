@@ -5,11 +5,10 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django import forms
-from .models import Profile
 from django.shortcuts import render
 from .forms import ProfileForm
-from registration.models import Profile_animal
-from shelter.models import Animal, Sponsor
+from .models import Profile, Profile_activity
+from shelter.models import Activity
 # Create your views here.
 
 from django.contrib.auth.decorators import user_passes_test
@@ -20,22 +19,9 @@ def staff_check(user):
 def panel(request):
     return render(request, "registration/panel.html")
 
-def notification(request):
-    animal = Animal.objects.all()
-    sponsor = Sponsor.objects.all()
-    profile_animal = Profile_animal.objects.all()
-    return render(request, "registration/notification.html", {'animals':animal, 'sponsors':sponsor, 'profile_animals':profile_animal})
-
-def sponsors(request):
-    animal = Animal.objects.all()
-    sponsor = Sponsor.objects.all()
-    profile_animal = Profile_animal.objects.all()
-    return render(request, "registration/sponsors.html", {'animals':animal, 'sponsors':sponsor, 'profile_animals':profile_animal})
-
-
 def profile(request):
-    profile_animal = Profile_animal.objects.all() 
-    return render(request, "registration/profile.html", {'profile_animal':profile_animal})
+    profile_activity = Profile_activity.objects.all() 
+    return render(request, "registration/profile.html", {'profile_activity':profile_activity})
 
 def perfil(request):
     perfil = Profile.objects.all()
