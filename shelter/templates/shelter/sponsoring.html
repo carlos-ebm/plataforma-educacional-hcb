@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Actividades{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class ="row justify-content-start">
+        {% for animal in animals %}
+        {% if animal.course == user.profile.course %}
+        {% if animal.animal_id != 123456 %}
+            <div class="col- col-md-3 align-self-start mb-5">
+                <div class="card dogcard">
+                    <!--<div class="imagen-dog">
+                        <img class="card-img-top" src="/media/{{animal.image}}" alt="Card image">
+                    </div>-->
+                    <div class="card-body">
+                        <h3 class="card-title text-center">{{animal.name}}</h3>
+                        <p class="card-text">{{animal.instrucciones}}</p>
+                        <p class="card-text"><i>Subido el {{animal.created}}</i></p>
+                        <!-- <p class="card-text"><i>Sexo: {{animal.gender}}</i></p>
+                        <p class="card-text"><i>Esterilizad@: {{animal.sterilized}}</i></p> -->
+                        <div class="text-center mt-3">
+                            <a href="{{animal.document.url}}" id="btn-profile-dog" class="btn btn-dark btncard">Descargar</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
