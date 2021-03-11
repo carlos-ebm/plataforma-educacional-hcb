@@ -11,8 +11,8 @@ class Profile(models.Model):
     email = models.EmailField(verbose_name = "E-mail")
     phone = models.CharField(max_length = 50, verbose_name = "Celular", blank=True)
     course = models.IntegerField(verbose_name = "Curso", null=True, blank=True)
-    address = models.CharField(max_length = 50, verbose_name = "Direccion", blank=True)
-    role = models.CharField(max_length = 50, verbose_name = "Cargo", blank=True)
+    school = models.IntegerField(verbose_name = "Colegio", null=True, blank=True)
+    address = models.CharField(max_length = 50, verbose_name = "Direccion", null=True, blank=True)
     activityToStudent = models.ManyToManyField(Activity, through = "Profile_activity" , verbose_name = "Actividades por estudiante")
 
     class Meta:

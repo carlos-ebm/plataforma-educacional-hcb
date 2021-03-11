@@ -18,22 +18,17 @@
 <body>
 
   <nav id="menu" class="navbar navbar-expand-lg navbar-dark">
-    <!-- <a class="navbar-brand" href="{% url 'inicio' %}"><img width="100px" src="{% static 'core/img/logooriginal.png' %}" alt="Shakepaws"></a> -->
     <a><b><i>Plataforma Educación</i></b> | </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
-        </li>
+        {% if request.user.is_authenticated %}
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'apadrinar' %}">Actividades</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'informacion' %}">Información</a>
-        </li>
+        {% endif %}
       </ul>
       
       <span class="navbar-text"></span>
@@ -43,9 +38,9 @@
       {% else %}
           <p style="color: white;">Hola {{request.user.username}}!</p> 
         {% if request.user.is_staff %}
-          {% if user.profile == "" %}
+          
             <a style="color: white;" class="nav-link" href="/admin">Admin</a>
-          {% endif %}
+          
             <a style="color: white;" class="nav-link" href="{% url 'perfil' %}">Mi Perfil</a>
         {% else %}
             <a style="color: white;" class="nav-link" href="{% url 'perfil' %}">Mi Perfil</a>

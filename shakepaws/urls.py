@@ -24,9 +24,9 @@ from sponsorProfile import views as sponsorProfile_views
 
 urlpatterns = [
     path('', core_views.index, name = "inicio"),
-    path('informacion/', core_views.information, name = "informacion"),
+    #path('informacion/', core_views.information, name = "informacion"),
     path('actividades/', shelter_views.sponsoring , name = "apadrinar"),
-    path('perfil-animal/<int:animal_id>/', animalProfile_views.profile , name = "perfil-animal"),
+    #path('perfil-animal/<int:animal_id>/', animalProfile_views.profile , name = "perfil-animal"),
     
     #path('validation/<int:animal_id>/<sponsor_id>/', animalProfile_views.validation , name = "validation"),
     
