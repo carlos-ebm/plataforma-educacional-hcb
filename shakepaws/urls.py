@@ -18,11 +18,9 @@ from django.urls import path, include
 from core import views as core_views
 from shelter import views as shelter_views
 from django.conf import settings
-from animalProfile import views as animalProfile_views
-from sponsorProfile import views as sponsorProfile_views
-#from registration import views as registration_views
+from registration import views as registration_views
 
-urlpatterns = [
+urlpatterns = [  
     path('', core_views.index, name = "inicio"),
     #path('informacion/', core_views.information, name = "informacion"),
     path('actividades/', shelter_views.sponsoring , name = "apadrinar"),
@@ -36,8 +34,7 @@ urlpatterns = [
     
     #Path de autenticación
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('registration.urls')),
-    path('accounts/', include('animalProfile.urls')),
+    path('', include('registration.urls')),
 ]
 
 #Define la ruta de las fotos de los animales

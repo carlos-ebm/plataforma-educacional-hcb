@@ -132,5 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 #Autenticación
 
-LOGIN_REDIRECT_URL = 'inicio'
+LOGIN_REDIRECT_URL = 'apadrinar'
 LOGOUT_REDIRECT_URL = 'inicio'

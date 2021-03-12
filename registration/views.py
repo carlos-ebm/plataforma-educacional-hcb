@@ -16,6 +16,9 @@ from django.contrib.auth.decorators import user_passes_test
 def staff_check(user):
     return user.is_staff
 
+def login(request):
+    return render(request, "registration/login.html")
+
 def panel(request):
     return render(request, "registration/panel.html")
 
