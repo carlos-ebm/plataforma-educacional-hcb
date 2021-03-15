@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from shelter.models import Activity
+from school.models import Activity
 
 
 class Profile(models.Model):
@@ -13,8 +13,7 @@ class Profile(models.Model):
     course = models.IntegerField(verbose_name = "Curso", null=True, blank=True)
     school = models.IntegerField(verbose_name = "Colegio", null=True, blank=True)
     address = models.CharField(max_length = 50, verbose_name = "Direccion", null=True, blank=True)
-    activityToStudent = models.ManyToManyField(Activity, through = "Profile_activity" , verbose_name = "Actividades por estudiante")
-
+   
     class Meta:
         verbose_name = "Perfil"
         verbose_name_plural = "Perfiles"
@@ -24,13 +23,3 @@ class Profile(models.Model):
         return self.fname
 
     
-
-class Profile_activity(models.Model):
-    profile = models.ForeignKey(Profile, on_delete = models.CASCADE)
-    activity = models.ForeignKey(Activity, on_delete = models.CASCADE)
-    created = models.DateTimeField(auto_now_add = True, verbose_name = "Fecha de creación")
-
-    class Meta:
-        verbose_name = "Actividad de estudiante"
-        verbose_name_plural = "Actividades de estudiantes"
-        ordering = ["-created"]

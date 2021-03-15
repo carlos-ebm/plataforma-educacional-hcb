@@ -1,4 +1,4 @@
-"""shakepaws URL Configuration
+"""educacioncasabelen URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -16,14 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views as core_views
-from shelter import views as shelter_views
+from school import views as school_views
 from django.conf import settings
 from registration import views as registration_views
 
 urlpatterns = [  
     path('', core_views.index, name = "inicio"),
     #path('informacion/', core_views.information, name = "informacion"),
-    path('actividades/', shelter_views.sponsoring , name = "apadrinar"),
+    path('actividades/', school_views.activities , name = "apadrinar"),
     #path('perfil-animal/<int:animal_id>/', animalProfile_views.profile , name = "perfil-animal"),
     
     #path('validation/<int:animal_id>/<sponsor_id>/', animalProfile_views.validation , name = "validation"),

@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 from django import forms
 from django.shortcuts import render
 from .forms import ProfileForm
-from .models import Profile, Profile_activity
-from shelter.models import Activity
+from .models import Profile
+from school.models import Activity
 # Create your views here.
 
 from django.contrib.auth.decorators import user_passes_test
@@ -18,13 +18,6 @@ def staff_check(user):
 
 def login(request):
     return render(request, "registration/login.html")
-
-def panel(request):
-    return render(request, "registration/panel.html")
-
-def profile(request):
-    profile_activity = Profile_activity.objects.all() 
-    return render(request, "registration/profile.html", {'profile_activity':profile_activity})
 
 def perfil(request):
     perfil = Profile.objects.all()
@@ -55,8 +48,7 @@ class ProfileUpdate(UpdateView):
     template_name = 'registration/profile.html'
 
     def get_success_url(self):
-        return reverse_lazy('perfil-padrino') + '?ok'
-
+        return reverse_lazy('perfil-usuario') + '?ok'
 
     def get_object(self):
         # recuperar el objeto que se va editar

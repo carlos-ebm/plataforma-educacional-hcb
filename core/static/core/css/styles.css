@@ -60,13 +60,11 @@ html {
 }
 
 #menu{
-    background: linear-gradient(0.25turn, rgba(29, 128, 141, 0.5), rgba(119, 174, 236, 0.5), rgba(34, 47, 224, 0.5));
-    /*background: -webkit-gradient(linear, left top, left bottom, from(#ee1ac0), to(rgb(240, 120, 40)));*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#ee1ac0), to(rgb(240, 120, 40)));
 }
 
 body{
-    /*background-image: url('https://i.pinimg.com/736x/8a/4e/1e/8a4e1e8d6b340da246f22c5fac5b655e.jpg');*/
-    background-color: rgb(0, 140, 255);
+    background-image: url('https://i.pinimg.com/originals/b2/bf/34/b2bf34ce0bca37c4ef44bfbaa89c848b.jpg');
     background-repeat: no-repeat; 
     background-attachment: fixed;
     background-size: cover;
