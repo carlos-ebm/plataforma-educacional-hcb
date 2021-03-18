@@ -6,11 +6,11 @@
   <main role="main">
     <div class="container-fluid">
       <div class="row mt-3 justify-content-around">
-        <div class="col-md-5 mx-auto mb-5" id="form_div">
+        <div class="col-md-7 mx-auto mb-5" id="form_div">
           <form action="" method="post">{% csrf_token %}
-            <h3 class="mb-4">Registro</h3>
+            <h3 class="mb-4 text-center">Registrar cuenta</h3>
             {{form.as_p}}
-            <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
+            <div class="text-center"><input type="submit" class="btn btn-dark btncard" value="Registrar"></div>
           </form>
         </div>
       </div>

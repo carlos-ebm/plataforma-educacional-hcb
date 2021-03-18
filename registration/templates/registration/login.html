@@ -14,7 +14,7 @@
           <p>Usuario registrado con exito!</p>
         {% endif %}
         <form action="" method="post">{% csrf_token %}
-          <h3 class="mb-4">Iniciar sesión</h3>
+          <h3 class="mb-4 text-center">Iniciar sesión</h3>
           {% if form.non_field_errors %}
             <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
           {% endif %}
@@ -26,7 +26,7 @@
             <input type="password" name="password" required
               id="id_password" class="form-control" placeholder="Contraseña"/>
           </p>
-          <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
+          <div class="text-center"><input type="submit" class="btn btn-dark btncard" value="Acceder"></div>
         </form>
       </div>
     </div>

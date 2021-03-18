@@ -5,7 +5,6 @@ from registration.models import Profile
 class Activity(models.Model):
     name = models.CharField(max_length = 50, verbose_name = "Nombre")
     instruction = models.TextField(verbose_name = "Instrucciones")
-    image = models.ImageField(verbose_name = "Imagen", upload_to = "Animales")
     document = models.FileField(verbose_name = "Documento", upload_to = "Documentos")
     created = models.DateTimeField(auto_now_add = True, verbose_name = "Fecha de creación")
     updated = models.DateTimeField(auto_now = True, verbose_name = "Fecha de modificación")
@@ -28,3 +27,7 @@ class Activity_profile(models.Model):
         verbose_name = "Actividad de perfil"
         verbose_name_plural = "Actividades de perfiles"
         ordering = ["-created"]
+
+    def __str__(self):
+        message = str(self.activity) +" asignada/o a "+ str(self.profile)
+        return message

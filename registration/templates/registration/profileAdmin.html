@@ -14,7 +14,7 @@
             <div class="col col-md-3 align-self-start mt-3 text-center">
                     <img class="photo" src="/media/{{perfil.image}}" alt="">
             </div>
-            <div class="col col-md-6 align-self-start mt-3 text-start" id="form_div">
+            <div class="col col-md-6 align-self-start mt-3" id="form_div">
                 <h1 class="text-center">Datos personales</h1>
                 <ul>
                     <li><b>Nombre:</b> {{perfil.fname}}</li>
@@ -24,7 +24,7 @@
                 
             {% endif %}
         {% endfor %}
-        <a href="{% url 'perfil-usuario'  %}" class="btn btn-dark btncard text-center">Modificar perfil</a>
+        <div class="text-center"><a href="{% url 'perfil-usuario'  %}" class="btn btn-dark btncard">Modificar perfil</a></div>
       </div>
     </div>
 </div>
