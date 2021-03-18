@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from school.models import Activity
-
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -10,8 +8,8 @@ class Profile(models.Model):
     lname = models.CharField(max_length = 50, verbose_name = "Apellido")
     email = models.EmailField(verbose_name = "E-mail")
     phone = models.CharField(max_length = 50, verbose_name = "Celular", blank=True)
-    course = models.IntegerField(verbose_name = "Curso", null=True, blank=True)
-    school = models.IntegerField(verbose_name = "Colegio", null=True, blank=True)
+    course = models.CharField(max_length = 50, verbose_name = "Curso", null=True, blank=True)
+    school = models.CharField(max_length = 50, verbose_name = "Colegio", null=True, blank=True)
     address = models.CharField(max_length = 50, verbose_name = "Direccion", null=True, blank=True)
    
     class Meta:

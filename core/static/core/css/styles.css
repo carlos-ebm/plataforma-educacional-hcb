@@ -1,3 +1,7 @@
+li{
+    list-style:none;
+}
+
 html {
     min-height: 100%;
     position: relative;
@@ -5,15 +9,12 @@ html {
 
 .dogcard{
     border-radius: 10px;
-    width: 70%;
-    margin-left: 10%;
-    margin-top: 10%;
+    margin: 10px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
 .card{
     height: 100%;
-    width: 250px;
 }
 
 .card-img-top{
@@ -60,7 +61,7 @@ html {
 }
 
 #menu{
-    background: -webkit-gradient(linear, left top, left bottom, from(#ee1ac0), to(rgb(240, 120, 40)));
+    background: -webkit-gradient(linear, left top, left bottom, from(#ee1ac0be), to(rgba(240, 131, 240, 0.712)));
 }
 
 body{
@@ -89,6 +90,6 @@ footer {
     border-radius: 10px;
     border-color: whitesmoke;
     border-style: solid;
-    padding: 50px;
+    padding: 25px;
     background-color: rgb(255,255,255,0.5)
 }

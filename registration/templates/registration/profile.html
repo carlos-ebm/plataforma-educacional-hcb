@@ -1,18 +1,8 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Perfil de Padrino{% endblock %}
+{% block title %}Perfil de Usuario{% endblock %}
 
 {% block content %}
-
-{% if request.user.is_staff %}
-{% else %}
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'perfil-padrino' %}">Datos personales</a>
-  </li>
-
-</ul>
-{% endif %}
 
 <div class="container-fluid"  id="form_div">
     <div class ="row justify-content-around">

@@ -4,33 +4,49 @@
 
 {% block content %}
 
+{% if request.user.is_staff %}
 <div class="container-fluid">
     <div class ="row justify-content-start">
         {% for activity in activities %}
-        {% if activity.course == user.profile.course %}
-        {% if activity.activity_id != 123456 %}
-            <div class="col- col-md-3 align-self-start mb-5">
+        <div class="col- col-md-6 align-self-start mt-0 mb-5">
                 <div class="card dogcard">
-                    <!--<div class="imagen-dog">
-                        <img class="card-img-top" src="/media/{{animal.image}}" alt="Card image">
-                    </div>-->
                     <div class="card-body">
-                        <h3 class="card-title text-center">{{activity.name}}</h3>
-                        <p class="card-text">{{activity.instructions}}</p>
-                        <p class="card-text"><i>Subido el {{activity.created}}</i></p>
-                        <!-- <p class="card-text"><i>Sexo: {{animal.gender}}</i></p>
-                        <p class="card-text"><i>Esterilizad@: {{animal.sterilized}}</i></p> -->
+                        <td><b>{{activity.name}}</b></td></br>
+                        <td><i>{{activity.instruction}}</i></td>
                         <div class="text-center mt-3">
-                            <a href="{{activity.document.url}}" id="btn-profile-dog" class="btn btn-dark btncard">Descargar</a>
+                            <a href="" class="btn btn-dark btncard">Descargar</a>
                         </div>
                     </div>
-                </div> 
-            </div>
-            {% endif %}
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="container-fluid">
+    <div class ="row justify-content-start">
+        {% for activity_profile in activity_profiles %}
+            {% if activity_profile.profile_id == request.user.profile.id %}
+            {% for activity in activities %}
+                        {% if activity_profile.activity_id == activity.id %}
+                        <div class="col- col-md-6 align-self-start mt-0 mb-5">
+                            <div class="card dogcard">
+                                <div class="card-body">
+                                    <td><b>{{activity.name}}</b></td></br>
+                                    <td><i>{{activity.instruction}}</i></td>
+                                    <div class="text-center mt-3">
+                                        <a href="" class="btn btn-dark btncard">Descargar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                {% endfor %}
             {% endif %}
         {% endfor %}
     </div>
 </div>
+{% endif %}
 
 {% endblock %}
 
