@@ -4,8 +4,10 @@ from registration.models import Profile
 # Create your models here.    
 class Activity(models.Model):
     name = models.CharField(max_length = 50, verbose_name = "Nombre")
-    instruction = models.TextField(verbose_name = "Instrucciones")
-    document = models.FileField(verbose_name = "Documento", upload_to = "Documentos")
+    instruction = models.TextField(verbose_name = "Instrucciones", null=True, blank=True)
+    namelink = models.CharField(max_length = 50, verbose_name = "Nombre de enlace", null=True, blank=True)
+    link = models.URLField(verbose_name = "Enlace", null=True, blank=True)
+    document = models.FileField(verbose_name = "Documento", upload_to = "Documentos", null=True, blank=True)
     created = models.DateTimeField(auto_now_add = True, verbose_name = "Fecha de creación")
     updated = models.DateTimeField(auto_now = True, verbose_name = "Fecha de modificación")
     activityToProfile = models.ManyToManyField(Profile, through = "Activity_profile" , verbose_name = "Actividades de perfiles")

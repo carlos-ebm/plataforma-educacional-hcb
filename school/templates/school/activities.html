@@ -14,7 +14,12 @@
                         <td><b>{{activity.name}}</b></td></br>
                         <td><i>{{activity.instruction}}</i></td>
                         <div class="text-center mt-3">
-                            <a href="{{activity.document.url}}" class="btn btn-dark btncard">Descargar</a>
+                            {% if activity.document %}
+                                <a href="{{activity.document.url}}" class="btn btn-dark btncard">Descargar actividad</a>
+                            {% endif %}
+                            {% if activity.link %}
+                                <a href='{{activity.link}}' class="btn btn-secondary btncard">{{activity.namelink}}</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
